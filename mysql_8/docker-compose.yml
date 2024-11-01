@@ -5,17 +5,16 @@ services:
     container_name: mysql_8
     build: .
     image: mysql:8.0
-    command: ['--default-authentication-plugin=mysql_native_password']
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: user
       MYSQL_PASSWORD: user
     ports:
-      - '3306:3306'
+      - '3307:3306'
     networks:
       - wpsite
-
+      
   phpmyadmin:
     container_name: phpmyadmin
     depends_on:

@@ -95,7 +95,6 @@ sudo rm -r data/*
 docker-compose up --build -d
 
 -------------------------------------------------------------------
-
 Конфиг бд для работы с docker контейнером:
 
 <?php
@@ -119,3 +118,13 @@ return [
 docker stop php_7.4
 docker rm php_7.4
 docker-compose up --build php
+
+-------------------------------------------------------------------
+проверка сети контейнеров:
+
+docker network inspect wpsite
+
+-------------------------------------------------------------------
+логи контейнера
+
+docker logs your_mysql_container_name
