@@ -10,6 +10,7 @@ services:
     container_name: php_7.4
     build: .
     image: php:7.4-fpm
+    restart: always
     ports:
       - "9900:9000"
     volumes:

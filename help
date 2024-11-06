@@ -56,16 +56,14 @@ docker ps - список запущенных контейнеров
 docker ps -a - список всех контейнеров
 
 -------------------------------------------------------------------
+Запускаем образ с id 7ba10fcf5d23, внешний порт 3001, порт внутри докера 8001
 
 docker run -p 3001:8001 7ba10fcf5d23
 
-Запускаем образ с id 7ba10fcf5d23, внешний порт 3001, порт внутри докера 8001
-
 -------------------------------------------------------------------
+сборка образа и присвоение ему имени my-php-app
 
 docker build -t my-php-app .
-
-сборка образа и присвоение ему имени my-php-app
 
 -------------------------------------------------------------------
 Зайти в контейнер:
@@ -82,6 +80,8 @@ docker exec -it mysql_8 bash
 docker exec -i 49a16ad89b06 mysql -uroot -proot b2b < ~/database/b2b.sql
 
 docker exec -i mysql_8 mysql -uroot -proot tyres < ~/database/tyres.sql
+
+docker exec -i mysql_8 mysql -uroot -proot tyres < ~/database/b2b.sql
 
 docker exec -it mysql_8 mysql -uroot -proot b2b
 
@@ -125,6 +125,9 @@ docker-compose up --build php
 docker network inspect wpsite
 
 -------------------------------------------------------------------
-логи контейнера
+логи контейнера:
 
 docker logs your_mysql_container_name
+
+-------------------------------------------------------------------
+
