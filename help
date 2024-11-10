@@ -49,6 +49,10 @@ docker-compose up --force-recreate
 
 docker-compose down
 
+Удалить контейнер и volume:
+
+docker-compose down -v
+
 -------------------------------------------------------------------
 
 docker ps - список запущенных контейнеров
@@ -130,4 +134,18 @@ docker network inspect wpsite
 docker logs your_mysql_container_name
 
 -------------------------------------------------------------------
+просмотр образов
 
+docker images
+
+удалить образ
+
+docker rmi <image_name_or_id>
+
+удалить все образы
+
+docker rmi $(docker images -q)
+
+-------------------------------------------------------------------
+удалить связанные тома
+docker volume prune

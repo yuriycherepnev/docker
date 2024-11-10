@@ -12,6 +12,8 @@ services:
       MYSQL_PASSWORD: user
     ports:
       - '3307:3306'
+    volumes: 
+      - ./data:/var/lib/mysql  # Монтируем volume для хранения данных
     networks:
       - wpsite
       
@@ -34,3 +36,6 @@ services:
 networks:
   wpsite:
     external: true  # Использование внешней сети
+    
+volumes:
+  mysql_data:  # Это создаст volume, в котором будут храниться все данные MySQL
