@@ -35,7 +35,7 @@ services:
 
 networks:
   wpsite:
-    external: true  # Использование внешней сети
+    driver: bridge
     
 volumes:
   mysql_data:  # Это создаст volume, в котором будут храниться все данные MySQL
