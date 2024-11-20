@@ -35,23 +35,23 @@ docker run -it --name MyJava openjdk
 -------------------------------------------------------------------
 Создать контейнер из docker-compose.yml
 
-docker-compose up --build
+docker compose up --build
 
 создание и запуск контейнера в фоновом режиме:
 
-docker-compose up --build -d
+docker compose up --build -d
 
 Пересоздание:
 
-docker-compose up --force-recreate
+docker compose up --force-recreate
 
 Удалить контейнер:
 
-docker-compose down
+docker compose down
 
 Удалить контейнер и volume:
 
-docker-compose down -v
+docker compose down -v
 
 -------------------------------------------------------------------
 
