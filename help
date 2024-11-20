@@ -147,6 +147,24 @@ docker rmi <image_name_or_id>
 docker rmi $(docker images -q)
 
 -------------------------------------------------------------------
-удалить связанные тома
+cписок всех томов
+
+docker volume ls
+
+Исследовать конкретный том
+
+docker volume inspect my_volume
+
+Удалить том
+
+docker volume rm my_volume
+
+удалить все тома, которые не используются контейнерами
 
 docker volume prune
+
+очистка ресурсов Docker
+
+docker system prune
+
+
