@@ -3,6 +3,7 @@ version: '3.1'
 services:
   clickhouse-server:
     image: yandex/clickhouse-server:latest
+    restart: always
     container_name: clickhouse-server
     ports:
       - "8123:8123"

@@ -166,5 +166,3 @@ docker volume prune
 очистка ресурсов Docker
 
 docker system prune
-
-
