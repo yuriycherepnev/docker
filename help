@@ -116,6 +116,16 @@ return [
     //'schemaCache' => 'cache',
 ];
 
+return [
+    'class' => 'yii\db\Connection',
+    'dsn' => 'mysql:host=127.0.0.1:3307;dbname=pulsprice',
+    'username' => 'root',
+    'password' => 'root',
+    'charset' => 'utf8',
+    'attributes' => [PDO::ATTR_CASE => PDO::CASE_LOWER],
+]; 
+
+
 -------------------------------------------------------------------
 Пересобрать 1 контейнер:
 
@@ -134,7 +144,7 @@ docker network inspect wpsite
 docker logs your_mysql_container_name
 
 -------------------------------------------------------------------
-просмотр образов
+просмотр образов:
 
 docker images
 
@@ -147,7 +157,7 @@ docker rmi <image_name_or_id>
 docker rmi $(docker images -q)
 
 -------------------------------------------------------------------
-cписок всех томов
+cписок всех томов:
 
 docker volume ls
 
