@@ -87,6 +87,8 @@ docker exec -i mysql_8 mysql -uroot -proot tyres < ~/database/tyres.sql
 
 docker exec -i mysql_8 mysql -uroot -proot tyres < ~/database/b2b.sql
 
+docker exec -i mysql_8 mysql -uroot -proot tyres_2 < ~/database/tyres_2.sql
+
 docker exec -it mysql_8 mysql -uroot -proot b2b
 
 SOURCE ~/database/b2b.sql
