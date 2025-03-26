@@ -68,7 +68,7 @@ docker run -p 3001:8001 7ba10fcf5d23
 сборка образа и присвоение ему имени my-php-app
 
 docker build -t my-php-app .
-
+н
 -------------------------------------------------------------------
 Зайти в контейнер:
 
@@ -85,7 +85,7 @@ docker exec -i 49a16ad89b06 mysql -uroot -proot b2b < ~/database/b2b.sql
 
 docker exec -i mysql_8 mysql -uroot -proot tyres < ~/database/tyres.sql
 
-docker exec -i mysql_8 mysql -uroot -proot tyres < ~/database/b2b.sql
+docker exec -i mysql_8 mysql -uroot -proot b2b < ~/database/b2b.sql
 
 docker exec -it mysql_8 mysql -uroot -proot b2b
 
