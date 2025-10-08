@@ -5,6 +5,7 @@ WORKDIR /app
 COPY ./create_db.sh /app/create_db.sh
 
 # Копируем SQL-файлы в директорию для инициализации базы данных
+# При первом запуске контейнера MySQL автоматически выполняет все SQL-скрипты из этой папки в алфавитном порядке
 COPY ./database/*.sql /docker-entrypoint-initdb.d/
 
 # Копируем конфиги mysql
