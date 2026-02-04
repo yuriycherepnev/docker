@@ -176,3 +176,15 @@ docker volume prune
 очистка ресурсов Docker
 
 docker system prune
+
+-------------------------------------------------------------------
+Дропнуть процесс контейнера:
+
+имена контейнеров:
+docker ps --format "table {{.Names}}"
+
+pid:
+docker top media_app
+
+
+sudo kill -9 40692
