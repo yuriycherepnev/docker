@@ -186,5 +186,11 @@ docker ps --format "table {{.Names}}"
 pid:
 docker top media_app
 
-
 sudo kill -9 40692
+
+дропнуть стопкой:
+
+containers="media_app media_redis media_monthly_cron"
+echo $(for c in $containers; do docker top $c 2>/dev/null | awk 'NR>1 {print $2}'; done)
+
+sudo kill -9 37805 37854 37675 37760 37768 37667 37735
