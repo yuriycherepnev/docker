@@ -184,13 +184,22 @@ docker system prune
 docker ps --format "table {{.Names}}"
 
 pid:
-docker top media_app
+docker top mysql_8-db-1
 
-sudo kill -9 40692
+docker top mysql_8
+
+sudo kill -9 6240
 
 дропнуть стопкой:
 
 containers="media_app media_redis media_monthly_cron"
 echo $(for c in $containers; do docker top $c 2>/dev/null | awk 'NR>1 {print $2}'; done)
 
-sudo kill -9 37805 37854 37675 37760 37768 37667 37735
+sudo kill -9 14245 14362 14363 14364 14365 14366 14942 14952 14953 14161
+
+Дропнуть контейнер по id:
+docker inspect --format='{{.State.Pid}}' 5bea71539c2b
+
+sudo kill -9 29519
+
+
