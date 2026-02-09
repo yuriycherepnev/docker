@@ -198,8 +198,13 @@ echo $(for c in $containers; do docker top $c 2>/dev/null | awk 'NR>1 {print $2}
 sudo kill -9 14245 14362 14363 14364 14365 14366 14942 14952 14953 14161
 
 Дропнуть контейнер по id:
-docker inspect --format='{{.State.Pid}}' 5bea71539c2b
+docker inspect --format='{{.State.Pid}}' 96bb806d8a89
 
-sudo kill -9 29519
+sudo kill -9 41380
+
+-------------------------------------------------------------------
+Эта команда помогает капнуть историю образа:
+
+docker history mysql:8.0 --no-trunc | head -20
 
 

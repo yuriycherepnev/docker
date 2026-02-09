@@ -2,14 +2,13 @@ version: '3.8'
 
 services:
   db:
-    build: .
     image: mysql:8.0
     restart: always
     ports:
       - '3307:3306'
     env_file: .env
-    volumes: 
-      - ./data:/var/lib/mysql  # Монтируем volume для хранения данных
+    volumes:
+      - ./data:/var/lib/mysql
     networks:
       - wpsite
       
@@ -27,6 +26,4 @@ services:
 networks:
   wpsite:
     driver: bridge
-    
-volumes:
-  mysql_data:  # Это создаст volume, в котором будут храниться все данные MySQL
+
