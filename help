@@ -152,15 +152,34 @@ docker logs your_mysql_container_name
 
 docker images
 
-удалить образ
+удалить образ:
 
 docker rmi <image_name_or_id>
+docker rmi 10078391e6a2
+docker rmi 10078391e6a2 80cb4c16fab9 519cd2ad1862
 
-удалить все образы
+удалить все образы:
 
 docker rmi $(docker images -q)
 
-docker rmi ee7f6f8df950
+удалить висячие образы:
+
+docker image prune
+
+удалить все неиспользуемые образы:
+
+docker image prune -a
+
+удалить образы по фильтру:
+
+# Удалить образы старше определенного времени
+docker image prune --filter "until=24h"
+
+# Удалить образы с определенным label
+docker image prune --filter="label=deprecated"
+
+# Или одной командой все образы <none>
+docker images --filter "dangling=true" -q | xargs docker rmi
 
 -------------------------------------------------------------------
 cписок всех томов:
