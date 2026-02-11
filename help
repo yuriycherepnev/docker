@@ -78,12 +78,16 @@ docker exec -it php_7.4 bash
 
 docker exec -it mysql_8 bash
 
+docker exec -it mysql_8-db-1 bash
+
 -------------------------------------------------------------------
 Закачать бд в контейнер:
 
 docker exec -i 49a16ad89b06 mysql -uroot -proot b2b < ~/database/b2b.sql
 
 docker exec -i mysql_8 mysql -uroot -proot tyres < ~/database/tyres.sql
+
+docker exec -i mysql_8-db-1 mysql -uroot -proot tyres < ~/database/tyres.sql
 
 docker exec -i mysql_8 mysql -uroot -proot b2b < ~/database/b2b.sql
 
@@ -156,6 +160,8 @@ docker rmi <image_name_or_id>
 
 docker rmi $(docker images -q)
 
+docker rmi ee7f6f8df950
+
 -------------------------------------------------------------------
 cписок всех томов:
 
@@ -206,5 +212,3 @@ sudo kill -9 41380
 Эта команда помогает капнуть историю образа:
 
 docker history mysql:8.0 --no-trunc | head -20
-
-

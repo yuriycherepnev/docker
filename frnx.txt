@@ -1,0 +1,16 @@
+ip route add 162.159.140.0/24 dev forenx-wg
+ip route add 172.64.150.0/24 dev forenx-wg
+ip route add 104.18.37.0/24 dev forenx-wg
+ip route add 104.18.35.28/32 dev forenx-wg
+ip route add 104.18.41.241/32 dev forenx-wg
+ip route add 172.64.152.228/32 dev forenx-wg
+ip route add 172.64.146.15/32 dev forenx-wg
+ip route add 188.114.98.0/24 dev forenx-wg
+ip route add 188.114.99.0/24 dev forenx-wg
+ip route add 172.64.155.209/32 dev forenx-wg
+ip route add 104.18.39.85/32 dev forenx-wg
+ip route add 172.64.148.171/32 dev forenx-wg
+ip route add 172.64.155.214/32 dev forenx-wg
+ip route add 104.18.32.0/24 dev forenx-wg
+ip route add 8.6.112.0/24 dev forenx-wg
+ip route add 8.47.69.0/24 dev forenx-wg
