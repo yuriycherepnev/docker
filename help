@@ -51,7 +51,7 @@ docker compose build --no-cache
 
 Полностью принудительная пересборка:
 docker compose build --no-cache
-docker compose up -d
+docker compose up --force-recreate -d
 
 Удалить контейнер:
 
@@ -60,6 +60,13 @@ docker compose down
 Удалить контейнер и volume:
 
 docker compose down -v
+
+или
+
+docker compose down -v --remove-orphans
+
+down -v удаляет старые volumes (например, MySQL), если нужно
+--remove-orphans удаляет «лишние» контейнеры
 
 -------------------------------------------------------------------
 
