@@ -1,12 +1,12 @@
-version: '3.8'
-
 services:
   db:
-    build: .
-    image: mysql:8.0-main
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mysql-main
     restart: always
     ports:
-      - '3307:3306'
+      - "3307:3306"
     env_file: .env
     volumes:
       - ./data:/var/lib/mysql

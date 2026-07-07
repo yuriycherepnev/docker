@@ -95,6 +95,10 @@ docker exec -it mysql_8 bash
 
 docker exec -it mysql_8-db-1 bash
 
+docker exec -it postgres-db bash
+
+docker exec -it pgadmin bash
+
 -------------------------------------------------------------------
 Закачать бд в контейнер:
 
@@ -241,10 +245,20 @@ sudo kill -9 6240
 
 дропнуть стопкой:
 
-containers="media_app media_redis media_monthly_cron"
+containers="pgadmin postgres-db"
 echo $(for c in $containers; do docker top $c 2>/dev/null | awk 'NR>1 {print $2}'; done)
 
-sudo kill -9 14245 14362 14363 14364 14365 14366 14942 14952 14953 14161
+containers="mysql_8-phpmyadmin-1 mysql_8-db-1"
+echo $(for c in $containers; do docker top $c 2>/dev/null | awk 'NR>1 {print $2}'; done)
+
+sudo kill -9 37447 37755 37756 37757 38160 37922 38143 38144 38146 38147 38148 39113 39114
+
+или:
+containers="pgadmin postgres-db"; \
+for c in $containers; do docker top "$c" 2>/dev/null | awk 'NR>1 {print $2}'; done | xargs -r sudo kill -9
+
+containers="mysql_8-phpmyadmin-1 mysql_8-db-1"; \
+for c in $containers; do docker top "$c" 2>/dev/null | awk 'NR>1 {print $2}'; done | xargs -r sudo kill -9
 
 Дропнуть контейнер по id:
 docker inspect --format='{{.State.Pid}}' 96bb806d8a89
@@ -267,3 +281,5 @@ rm -rf docker/data
 потом:
 
 docker compose up --build
+
+docker compose up --build -d
